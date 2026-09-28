@@ -35,8 +35,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 생성되거나 변경된 파일들 추가
-          git add rss.xml sehuatang.db proxy_page.html
+          # 존재하는 파일들만 안전하게 추가 (proxy_page.html 제외)
+          git add rss.xml sehuatang.db || true
           
           # 변경 사항이 있을 때만 커밋 수행
           git diff --staged --quiet || git commit -m "Auto: Update RSS and DB [skip ci]"
