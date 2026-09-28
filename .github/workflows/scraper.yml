@@ -28,7 +28,7 @@ jobs:
           pip install cloudscraper beautifulsoup4 feedgen requests-cache requests
 
       - name: 크롤러 스크립트 실행
-        run: python sehuatang_3.py
+        run: python sehuatang.py
 
       - name: 변경된 파일(rss.xml, sehuatang.db 등) 자동 커밋 및 푸시
         run: |
